@@ -44,7 +44,21 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
-               NSLog(@"%@", [error localizedDescription]);
+               
+               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                      message:[NSString stringWithFormat:@"%@", [error localizedDescription]]
+                      preferredStyle:(UIAlertControllerStyleAlert)];
+
+               // create an OK action
+               UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                       style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                                        // handle response here.
+                                                                }];
+               [alert addAction:okAction];
+               
+               [self presentViewController:alert animated:YES completion:^{
+                   // optional code for what happens after the alert controller has finished presenting
+               }];
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
