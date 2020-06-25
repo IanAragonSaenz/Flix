@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bf-Co-ZhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="1575"/>
+            <point key="canvasLocation" x="138" y="1585"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="8eQ-7A-x68">
@@ -221,6 +221,7 @@
                                         <size key="customSize" width="193" height="230"/>
                                         <connections>
                                             <outlet property="posterView" destination="PPg-sR-Nwc" id="GH7-qT-IZV"/>
+                                            <segue destination="ldw-zr-7Pz" kind="show" id="D1O-WR-jPP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -245,4 +246,7 @@
             <point key="canvasLocation" x="2253.6231884057975" y="857.60869565217399"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NT6-7Z-gEF"/>
+    </inferredMetricsTieBreakers>
 </document>
