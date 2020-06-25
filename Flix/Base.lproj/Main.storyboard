@@ -243,10 +243,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kY-Zc-57H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2253.6231884057975" y="857.60869565217399"/>
+            <point key="canvasLocation" x="2254" y="858"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NT6-7Z-gEF"/>
+        <segue reference="D1O-WR-jPP"/>
     </inferredMetricsTieBreakers>
 </document>

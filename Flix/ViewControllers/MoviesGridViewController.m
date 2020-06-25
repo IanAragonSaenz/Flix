@@ -105,12 +105,35 @@
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
     
     NSDictionary *movie = self.movies[indexPath.item];
-    NSString *movieURL = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterImageURL = [movieURL stringByAppendingString:movie[@"poster_path"]];
-    NSURL *posterURL = [NSURL URLWithString:posterImageURL];
+    NSURL *bigURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://image.tmdb.org/t/p/w500/%@", movie[@"poster_path"]]];
+    NSURL *smallURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://image.tmdb.org/t/p/w200/%@", movie[@"poster_path"]]];
     
-    cell.posterView.image = nil;
-    [cell.posterView setImageWithURL:posterURL];
+    NSURLRequest *bigRequest = [NSURLRequest requestWithURL:bigURL];
+    NSURLRequest *smallRequest = [NSURLRequest requestWithURL:smallURL];
+    
+    [cell.posterView setImageWithURLRequest:smallRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *smallImage) {
+    
+        cell.posterView.alpha = 0.0;
+        cell.posterView.image = smallImage;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+                            //fade animation
+                            cell.posterView.alpha = 1.0;
+                        } completion:^(BOOL finished){
+                            //request big image after small image loads
+                            [cell.posterView setImageWithURLRequest:bigRequest placeholderImage:smallImage success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *bigImage) {
+                                //load big image
+                                cell.posterView.image =bigImage;
+                                
+                            } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                                //do in case of error / probably change to a default image
+                            }];
+        }];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        //do in case of error / probably change to big image
+    }];
+
     
     return cell;
 }
