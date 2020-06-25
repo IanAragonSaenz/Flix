@@ -11,12 +11,14 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSArray *filteredMovies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UISearchBar *movieSearchBar;
 
 @end
 
@@ -27,6 +29,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.movieSearchBar.delegate = self;
     
     // Do any additional setup after loading the view
     [self fetchMovies];
@@ -66,6 +69,7 @@
                // DONE: Get the array of movies
                // DONE: Store the movies in a property to use elsewhere
                self.movies = dataDictionary[@"results"];
+               self.filteredMovies = self.movies;
                
                // TODO: Reload your table view data
                [self.tableView reloadData];
@@ -76,16 +80,17 @@
     [task resume];
 }
 
+#pragma mark - Table View
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.movies.count;
+    return self.filteredMovies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
-    
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredMovies[indexPath.row];
     cell.titleLabel.text = movie[@"title"];
     cell.descriptionLabel.text = movie[@"overview"];
     
@@ -120,6 +125,40 @@
     
     return cell;
 }
+
+
+#pragma mark - SearchBar
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"%@", self.filteredMovies);
+        
+    }
+    else {
+        self.filteredMovies = self.movies;
+    }
+    
+    [self.tableView reloadData];
+ 
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.movieSearchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.movieSearchBar.showsCancelButton = NO;
+    self.movieSearchBar.text = @"";
+    [self.movieSearchBar resignFirstResponder];
+}
+
 
 #pragma mark - Navigation
 
