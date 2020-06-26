@@ -29,18 +29,26 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] If the user taps on the poster in the details of the movie, it will show the trailer. 
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Why is this needed? ->
+self.collectionView.dataSource = self;
+self.collectionView.delegate = self;
+self.movieSearchBar.delegate = self;
+2. Maybe more about how networking works, something like doing POST.
+3. Handling of NSArray and NSDictionary, know when to use them.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/NWMdcF1eKC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='http://g.recordit.co/dVSNs9deQF.gif' title='Search Bar and Grid' width='' alt='Video Walkthrough' />
+
+<img src='http://g.recordit.co/Y0UcVuU4eS.gif' title='Table View and Grid with Details' width='' alt='Video Walkthrough' />
 
 GIF created with [Recordit](http://www.Recordit.co).
 
