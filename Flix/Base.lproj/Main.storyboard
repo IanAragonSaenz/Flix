@@ -112,14 +112,14 @@
                                         <rect key="frame" x="149" y="255" width="240" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDk-64-24g">
                                         <rect key="frame" x="22" y="348" width="367" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -127,7 +127,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="wnd-bV-ExD"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3vq-nM-SVQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="SOZ-TW-wj8"/>
@@ -221,7 +221,7 @@
         <scene sceneID="9Hv-xT-ksg">
             <objects>
                 <navigationController id="phV-7A-NLI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies Grid" id="SB5-mW-Hgy"/>
+                    <tabBarItem key="tabBarItem" title="Movies Grid" image="iconmonstr-windows-thin-32" id="SB5-mW-Hgy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gTl-DV-Bz2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -234,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="2255" y="137"/>
         </scene>
-        <!--Action-->
+        <!--Movies Grid-->
         <scene sceneID="1Kj-Ny-FpM">
             <objects>
                 <viewController id="2fr-8G-xeK" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -288,7 +288,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4iX-NO-4rC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Action" id="ieQ-Tf-LOp"/>
+                    <navigationItem key="navigationItem" title="Movies Grid" id="ieQ-Tf-LOp"/>
                     <connections>
                         <outlet property="activityIndicator" destination="u2w-r1-Yet" id="Sca-dp-cyX"/>
                         <outlet property="collectionView" destination="faN-D3-B3C" id="P5b-sc-Xvl"/>
@@ -301,9 +301,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NT6-7Z-gEF"/>
+        <segue reference="D1O-WR-jPP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="iconmonstr-window-thin-32" width="32" height="32"/>
+        <image name="iconmonstr-windows-thin-32" width="32" height="32"/>
     </resources>
 </document>
