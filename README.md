@@ -61,6 +61,8 @@ GIF created with [Recordit](http://www.Recordit.co).
 
 Describe any challenges encountered while building the app.
 
+-Taking the correct url for the get videos in order to display the trailer, I ran into problems because the results was an array of one index and inside that was the key.
+
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
