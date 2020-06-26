@@ -50,6 +50,9 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/Y0UcVuU4eS.gif' title='Table View and Grid with Details' width='' alt='Video Walkthrough' />
 
+<img src='http://g.recordit.co/xDVS39qmfR.gif' title='Network Error' width='' alt='Video Walkthrough' />
+
+
 GIF created with [Recordit](http://www.Recordit.co).
 
 ## Notes
