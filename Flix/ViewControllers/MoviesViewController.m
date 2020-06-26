@@ -112,7 +112,7 @@
                             //request big image after small image loads
                             [cell.posterView setImageWithURLRequest:bigRequest placeholderImage:smallImage success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *bigImage) {
                                 //load big image
-                                cell.posterView.image =bigImage;
+                                cell.posterView.image = bigImage;
                                 
                             } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
                                 //do in case of error / probably change to a default image

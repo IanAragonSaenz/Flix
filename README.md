@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 - [x] All images fade in as they are loading.
 - [x] User can view the large movie poster by tapping on a cell.
 - [x] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the selection effect of the cell.
+- [x] Customize the selection effect of the cell.
 - [ ] Customize the navigation bar.
 - [ ] Customize the UI.
 
@@ -51,6 +51,8 @@ Here's a walkthrough of implemented user stories:
 <img src='http://g.recordit.co/Y0UcVuU4eS.gif' title='Table View and Grid with Details' width='' alt='Video Walkthrough' />
 
 <img src='http://g.recordit.co/xDVS39qmfR.gif' title='Network Error' width='' alt='Video Walkthrough' />
+
+<img src='http://g.recordit.co/bojYh9cLDj.gif' title='Cell Selection Customization' width='' alt='Video Walkthrough' />
 
 
 GIF created with [Recordit](http://www.Recordit.co).
