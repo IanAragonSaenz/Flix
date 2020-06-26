@@ -184,7 +184,7 @@
         <scene sceneID="8eQ-7A-x68">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T66-Tn-ePN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" id="GhQ-sG-Ey2"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="iconmonstr-window-thin-32" id="GhQ-sG-Ey2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5KP-Hu-gcO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -217,11 +217,11 @@
             </objects>
             <point key="canvasLocation" x="1274" y="-620"/>
         </scene>
-        <!--Grid-->
+        <!--Movies Grid-->
         <scene sceneID="9Hv-xT-ksg">
             <objects>
                 <navigationController id="phV-7A-NLI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grid" id="SB5-mW-Hgy"/>
+                    <tabBarItem key="tabBarItem" title="Movies Grid" id="SB5-mW-Hgy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gTl-DV-Bz2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -303,4 +303,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="NT6-7Z-gEF"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="iconmonstr-window-thin-32" width="32" height="32"/>
+    </resources>
 </document>
