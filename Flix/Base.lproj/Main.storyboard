@@ -100,9 +100,13 @@
                                         <rect key="frame" x="0.0" y="-44" width="414" height="282"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asb-C2-aB1">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asb-C2-aB1">
                                         <rect key="frame" x="22" y="164" width="119" height="176"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="bum-aC-UeQ" appends="YES" id="Bqa-wX-iiI"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6e-zD-teY">
                                         <rect key="frame" x="149" y="255" width="240" height="32"/>
@@ -132,11 +136,49 @@
                         <outlet property="descriptionLabel" destination="lDk-64-24g" id="Kj9-Qd-fHK"/>
                         <outlet property="posterView" destination="asb-C2-aB1" id="KGR-Zv-cL9"/>
                         <outlet property="titleLabel" destination="n6e-zD-teY" id="cBa-Dj-ln6"/>
+                        <segue destination="bVa-m8-9Z3" kind="presentation" identifier="trailer" id="Vl0-XC-Hiv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bf-Co-ZhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bum-aC-UeQ">
+                    <connections>
+                        <action selector="tappedPoster:" destination="ldw-zr-7Pz" id="L3r-qH-mpC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138" y="1591"/>
+        </scene>
+        <!--Trailer-->
+        <scene sceneID="hmF-O1-HrD">
+            <objects>
+                <viewController id="bVa-m8-9Z3" customClass="TrailerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kQ1-R9-uwP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXb-La-tOd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5SB-4G-bfu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trailer" id="WGT-ej-b5T">
+                        <barButtonItem key="backBarButtonItem" title="Details" id="Jhw-Mq-keX"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="trailerWebView" destination="PXb-La-tOd" id="WBI-21-XpN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nS3-PL-Yk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="2371.467391304348"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="8eQ-7A-x68">
@@ -192,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="2255" y="137"/>
         </scene>
-        <!--Movies Grid View Controller-->
+        <!--Action-->
         <scene sceneID="1Kj-Ny-FpM">
             <objects>
                 <viewController id="2fr-8G-xeK" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -246,7 +288,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4iX-NO-4rC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ieQ-Tf-LOp"/>
+                    <navigationItem key="navigationItem" title="Action" id="ieQ-Tf-LOp"/>
                     <connections>
                         <outlet property="activityIndicator" destination="u2w-r1-Yet" id="Sca-dp-cyX"/>
                         <outlet property="collectionView" destination="faN-D3-B3C" id="P5b-sc-Xvl"/>
@@ -259,6 +301,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D1O-WR-jPP"/>
+        <segue reference="NT6-7Z-gEF"/>
     </inferredMetricsTieBreakers>
 </document>
